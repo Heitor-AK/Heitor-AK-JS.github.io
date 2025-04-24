@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Exerc1.js" defer></script>
+    <title>Laboratório de JavaScript - Strings e Datas</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .exercicio { margin-bottom: 30px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+        button { padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0 15px; box-sizing: border-box; }
+        .resultado { background-color: #f9f9f9; padding: 10px; border-radius: 4px; }
+        .fraca { color: red; }
+        .moderada { color: orange; }
+        .forte { color: green; }
+        .vogal-negrito { font-weight: bold; color: #e74c3c; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Laboratório de JavaScript - Strings e Datas</h1>
+    
+    <!-- Exercício 1: Inverter Frase -->
+    <div class="exercicio">
+        <h2>1. Inverter Frase</h2>
+        <textarea id="fraseInverter" placeholder="Digite uma frase"></textarea>
+        <button onclick="document.getElementById('resultado1').textContent = inverterFrase(document.getElementById('fraseInverter').value)">Inverter</button>
+        <div class="resultado" id="resultado1"></div>
+    </div>
+    
+    <!-- Exercício 2: Marcar Vogais -->
+    <div class="exercicio">
+        <h2>2. Marcar Vogais em Negrito</h2>
+        <textarea id="fraseVogais" placeholder="Digite uma frase"></textarea>
+        <button onclick="document.getElementById('resultado2').innerHTML = marcarVogais(document.getElementById('fraseVogais').value)">Marcar Vogais</button>
+        <div class="resultado" id="resultado2"></div>
+    </div>
+    
+    <!-- Exercício 3: Contar Palavras -->
+    <div class="exercicio">
+        <h2>3. Contar Ocorrências de Palavras</h2>
+        <textarea id="textoContar" placeholder="Digite um texto"></textarea>
+        <button onclick="const contagem = contarPalavras(document.getElementById('textoContar').value); 
+                        let html = '<table><tr><th>Palavra</th><th>Ocorrências</th></tr>'; 
+                        for (let palavra in contagem) { 
+                            html += '<tr><td>' + palavra + '</td><td>' + contagem[palavra] + '</td></tr>'; 
+                        } 
+                        html += '</table>'; 
+                        document.getElementById('resultado3').innerHTML = html;">Contar Palavras</button>
+        <div class="resultado" id="resultado3"></div>
+    </div>
+    
+    <!-- Exercício 4: Estatísticas de Texto -->
+    <div class="exercicio">
+        <h2>4. Estatísticas de Texto</h2>
+        <textarea id="textoEstatisticas" placeholder="Digite um texto"></textarea>
+        <button onclick="const stats = estatisticasTexto(document.getElementById('textoEstatisticas').value); 
+                        document.getElementById('resultado4').innerHTML = 'Palavra mais frequente: ' + stats.palavraMaisFrequente + 
+                        ' (' + stats.ocorrencias + ' ocorrências)<br>Total de palavras: ' + stats.totalPalavras + 
+                        '<br>Total de letras: ' + stats.totalLetras;">Calcular Estatísticas</button>
+        <div class="resultado" id="resultado4"></div>
+    </div>
+    
+    <!-- Exercício 5: Substituir Texto -->
+    <div class="exercicio">
+        <h2>5. Substituir Texto</h2>
+        <textarea id="textoOriginal" placeholder="Texto original"></textarea>
+        <input type="text" id="procurar" placeholder="Texto a procurar">
+        <input type="text" id="substituir" placeholder="Texto substituto">
+        <button onclick="document.getElementById('resultado5').textContent = substituirTexto(
+                            document.getElementById('textoOriginal').value,
+                            document.getElementById('procurar').value,
+                            document.getElementById('substituir').value)">Substituir</button>
+        <div class="resultado" id="resultado5"></div>
+    </div>
+    
+    <!-- Exercício 6: Data por Extenso -->
+    <div class="exercicio">
+        <h2>6. Data por Extenso</h2>
+        <input type="text" id="dataExtenso" placeholder="dd/mm/aaaa">
+        <button onclick="document.getElementById('resultado6').textContent = dataPorExtenso(document.getElementById('dataExtenso').value)">Converter</button>
+        <div class="resultado" id="resultado6"></div>
+    </div>
+    
+    <!-- Exercício 7: Classificar Senha -->
+    <div class="exercicio">
+        <h2>7. Classificar Força da Senha</h2>
+        <input type="text" id="senha" placeholder="Digite uma senha">
+        <button onclick="const classificacao = classificarSenha(document.getElementById('senha').value); document.getElementById('resultado7').innerHTML = '<span style=\'color:' + classificacao.cor + '\'>' + classificacao.texto + '</span>';">Classificar</button>
+        <div class="resultado" id="resultado7"></div>
+    </div>
+    
+    <!-- Exercício 8: Codificação TENIS/POLAR -->
+    <div class="exercicio">
+        <h2>8. Codificação TENIS/POLAR</h2>
+        <textarea id="textoCodificar" placeholder="Digite um texto"></textarea>
+        <button onclick="document.getElementById('resultado8').textContent = codificarTenisPolar(document.getElementById('textoCodificar').value)">Codificar/Decodificar</button>
+        <div class="resultado" id="resultado8"></div>
+    </div>
+    
+    <!-- Exercício 9: Dias de Vida -->
+    <div class="exercicio">
+        <h2>9. Calcular Dias de Vida</h2>
+        <input type="text" id="dataNascimento" placeholder="dd/mm/aaaa">
+        <button onclick="document.getElementById('resultado9').textContent = calcularDiasDeVida(document.getElementById('dataNascimento').value)">Calcular</button>
+        <div class="resultado" id="resultado9"></div>
+    </div>
+    
+    <!-- Exercício 10: Distância entre Datas -->
+    <div class="exercicio">
+        <h2>10. Distância entre Datas em Semanas</h2>
+        <input type="text" id="data1" placeholder="Primeira data (dd/mm/aaaa)">
+        <input type="text" id="data2" placeholder="Segunda data (dd/mm/aaaa)">
+        <button onclick="document.getElementById('resultado10').textContent = distanciaEmSemanas(
+                            document.getElementById('data1').value,
+                            document.getElementById('data2').value)">Calcular</button>
+        <div class="resultado" id="resultado10"></div>
+    </div>
+</body>
+</html>
+
+    <!--*Html e Css feito por IA (menos as partes que envolvem JS)*-->
