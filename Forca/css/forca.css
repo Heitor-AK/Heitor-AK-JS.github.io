@@ -1,0 +1,23 @@
+#palavra {
+    list-style: none;
+    display: flex;
+
+}
+
+#palavra li {
+   
+    padding: 5px 15px;
+    margin: 5px;
+    color:#fff;
+    border-bottom: #000 solid 1px;
+}
+
+#perdeu {
+    color: red;
+    font-size: 3em;
+}
+
+#ganhou {
+    color: green;
+    font-size: 3em;
+}
