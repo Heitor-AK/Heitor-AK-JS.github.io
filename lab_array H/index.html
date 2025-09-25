@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análise de Produtos</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📦 Análise de Produtos da Loja</h1>
+
+    <input type="text" id="buscar" placeholder="Digite o nome do produto" />
+    <button>Buscar Produto</button>
+
+    <div id="resultadoBusca" class="card"></div>
+
+    <hr />
+
+    <button id="listaProdutos">📋 Listar Produtos</button>
+    <button onclick="mostrarNomes()">📝 Nomes dos Produtos</button>
+    <button onclick="calcularTotal()">💰 Valor Total do Estoque</button>
+    <button onclick="verificarEsgotados()">🚨 Produtos Esgotados</button>
+    <button onclick="verificarPrecos()">💸 Preços Justos</button>
+
+    <div id="resultado" class="output"></div>
+  </div>
+
+    <hr>
+
+  <h2>Adicionar Produto</h2>
+  <input type="text" id="novoNome" placeholder="Nome do produto" />
+  <input type="number" id="novoPreco" placeholder="Preço" step="0.01" />
+  <input type="number" id="novoQtd" placeholder="Quantidade" />
+  <button onclick="adicionarProduto(
+    document.querySelector('#novoNome').value,
+    document.querySelector('#novoPreco').value,
+    document.querySelector('#novoQtd').value
+  )">➕ Adicionar Produto</button>
+
+  <hr>
+
+  <h2>Aplicar Desconto</h2>
+  <input type="number" id="desconto" placeholder="Percentual de desconto" />
+  <button onclick="aplicarDesconto(document.querySelector('#desconto').value)">🏷️ Aplicar Desconto</button>
+
+  <hr>
+<button onclick="limparLocalStorage()">🗑️ Limpar LocalStorage</button>
+
+</body>
+</html>
