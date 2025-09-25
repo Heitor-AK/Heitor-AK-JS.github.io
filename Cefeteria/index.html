@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria do CEFET-RJ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cafeteria do CEFET-RJ</h1>
+        </header>
+        <div class="menu">
+            <h2>Cardápio</h2>
+            <div class="item" data-name="Café Espresso" data-price="8.00">
+                <img src="https://files.agro20.com.br/uploads/2020/01/Caf%C3%A9-expresso-1.jpg" alt="Café Espresso">
+                <p>Café Espresso - R$8,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+            <div class="item" data-name="Capuccino" data-price="12.00">
+                <img src="https://www.bongusto.ind.br/wp-content/uploads/2023/06/mockup-galeria-capuccino-tradicional-xicara.jpg" alt="Capuccino">
+                <p>Capuccino - R$12,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+            <div class="item" data-name="Suco de Laranja" data-price="10.00">
+                <img src="https://img.freepik.com/fotos-gratis/vidro-do-sumo-de-laranja-colocado-na-madeira_1150-9663.jpg?semt=ais_incoming&w=740&q=80" alt="Suco de Laranja">
+                <p>Suco de Laranja - R$10,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+            <div class="item" data-name="Água Mineral" data-price="6.00">
+                <img src="https://www.emporiofreicaneca.com.br/wp-content/uploads/2023/04/Agua-Mineral-Crystal-s-Gas-500ml.png.webp" alt="Água Mineral">
+                <p>Água Mineral - R$6,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+            <div class="item" data-name="Fatia de Bolo" data-price="12.00">
+                <img src="https://www.lokmacafe.com.br/wp-content/uploads/bolo-recheado-bolo-de-Pa%C3%A7oquinha.jpg" alt="Fatia de Bolo">
+                <p>Fatia de Bolo - R$12,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+            <div class="item" data-name="Sanduiche Natural" data-price="15.00">
+                <img src="https://guiadacozinha.com.br/wp-content/uploads/2021/03/lanche-natural-light-51401-1-1024x752.jpg" alt="Sanduiche Natural">
+                <p>Sanduiche Natural - R$15,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+            <div class="item" data-name="Croissant" data-price="17.00">
+                <img src="https://catracalivre.com.br/wp-content/uploads/2023/12/istock-1190095752-1.jpg" alt="Croissant">
+                <p>Croissant - R$17,00</p>
+                <button class="add-to-cart">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Itens Comprados</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: R$<span id="total">0,00</span></p>
+        </div>
+    </div>
+
+</body>
+</html>

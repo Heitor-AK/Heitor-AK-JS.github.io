@@ -1,0 +1,48 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  color: #cc0000;
+  margin-bottom: 2rem;
+}
+
+#container-pokemons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pokemon-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.status {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.status li {
+  text-align: left;
+  font-size: 0.9rem;
+  padding: 2px 0;
+}
