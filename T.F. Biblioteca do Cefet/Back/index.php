@@ -14,9 +14,13 @@
     case "livro":
         $controller = new LivroController($mysqli);
         break;
-    default: 
-        return json_encode("{erro: true, mensagem: 'Módulo Inválido'}");
-  }
+    default:
+        echo json_encode([
+            "erro" => true,
+            "mensagem" => "Módulo inválido"
+        ]);
+        exit;
+    }
   $dadosRecebidos = json_decode(file_get_contents("php://input", true));
   switch($metodo) {
     case "POST":

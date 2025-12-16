@@ -31,7 +31,7 @@ class Usuario extends ClassePai {
         $SQL = "UPDATE usuarios SET 
             nome = '$this->nome',
             email = '$this->email',
-            senha = '$this->senha',
+            senha = '$this->senha'
         WHERE id = $this->id";
         $conn->query($SQL);
     }

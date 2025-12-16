@@ -38,7 +38,6 @@
         $auxiliar = "";
         while(!feof($arquivo)){
             $linha = fgets($arquivo);
-            var_dump($linha);
             if(empty($linha))
                 continue;
             $dados = explode(self::SEPARADOR, $linha);
@@ -61,7 +60,6 @@
         $auxiliar = "";
         while(!feof($arquivo)){
             $linha = fgets($arquivo);
-            var_dump($linha);
             if(empty($linha))
                 continue;
             $dados = explode(self::SEPARADOR, $linha);
