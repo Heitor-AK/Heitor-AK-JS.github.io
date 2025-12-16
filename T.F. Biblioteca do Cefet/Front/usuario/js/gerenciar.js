@@ -45,7 +45,7 @@ function resetarDiv(div) {
 
 
 async function consultarUsuarios() {
-  const url = "http://localhost/backend/index.php?modulo=usuario";
+  const url = "http://localhost/back/index.php?modulo=usuario";
   const response = await fetch(url);
   const usuarios = await response.json();
   const div = document.querySelector("#saidaBusca");
@@ -55,7 +55,7 @@ async function consultarUsuarios() {
 }
 
 async function listarTodos() {
-  const url = "http://localhost/backend/index.php?modulo=usuario";
+  const url = "http://localhost/back/index.php?modulo=usuario";
   const response = await fetch(url);
   const usuarios = await response.json();
   const div = document.querySelector("#saidaBusca");

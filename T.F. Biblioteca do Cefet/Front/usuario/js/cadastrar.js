@@ -13,7 +13,7 @@ function Usuario(nome, email, senha) {
 }
 
 async function cadastrarUsuario() {
-  const url = "http://localhost/backend/index.php?modulo=usuario";
+  const url = "http://localhost/back/index.php?modulo=usuario";
 
   const nome = document.querySelector("#novoNome").value;
   const email = document.querySelector("#novoEmail").value;

@@ -107,7 +107,7 @@ function resetarDiv(div) {
 }
  
 async function consultarLivros() {
-  const url = "http://localhost/backend/index.php?modulo=livro";
+  const url = "http://localhost/back/index.php?modulo=livro";
   const response = await fetch(url);
   const livros = await response.json();
   const div = document.querySelector("#saidaBusca");
@@ -118,7 +118,7 @@ async function consultarLivros() {
 }
 
 async function listarTodos() {
-  const url = "http://localhost/backend/index.php?modulo=livro";
+  const url = "http://localhost/back/index.php?modulo=livro";
   const response = await fetch(url);
   const livros = await response.json();
   const div = document.querySelector("#saidaBusca");
