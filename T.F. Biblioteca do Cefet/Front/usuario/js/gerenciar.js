@@ -1,0 +1,67 @@
+const btnConsultarUsuarios = document.querySelector("#consultarUsuarios");
+const btnListarTodosUsuarios = document.querySelector("#listarUsuarios");
+
+function criarTabela(usuarios, div) {
+  const tabela = document.createElement("table");
+  const nomesColunas = document.createElement("tr");
+  const nomeNome = document.createElement("th");
+  nomeNome.textContent = "Nome";
+  const nomeEmail = document.createElement("th");
+  nomeEmail.textContent = "E-mail";
+  const nomeSenha = document.createElement("th");
+  nomeSenha.textContent = "Senha";
+  nomesColunas.appendChild(nomeNome);
+  nomesColunas.appendChild(nomeEmail);
+  nomesColunas.appendChild(nomeSenha);
+  tabela.appendChild(nomesColunas);
+  usuarios.forEach((usuario) => {
+    const linha = document.createElement("tr");
+    const nome = document.createElement("td");
+    nome.textContent = usuario.nome;
+    linha.appendChild(nome);
+    const email = document.createElement("td");
+    email.textContent = usuario.email;
+    linha.appendChild(email);
+    const senha = document.createElement("td");
+    senha.textContent = usuario.senha;
+    linha.appendChild(senha);
+    tabela.appendChild(linha);
+  });
+  div.appendChild(tabela);
+}
+
+function filtrarUsuarios(usuarios, filtro) {
+  const usuariosFiltrados = usuarios.filter((usuario) => {
+    return usuario.nome.includes(filtro) || usuario.email.includes(filtro);
+  });
+  return usuariosFiltrados;
+}
+
+function resetarDiv(div) {
+  while (div.firstChild) {
+    div.removeChild(div.firstChild);
+  }
+}
+
+
+async function consultarUsuarios() {
+  const url = "http://localhost/backend/index.php?modulo=usuario";
+  const response = await fetch(url);
+  const usuarios = await response.json();
+  const div = document.querySelector("#saidaBusca");
+  const filtro = document.querySelector("#busca").value;
+  resetarDiv(div);
+  criarTabela(filtrarUsuarios(usuarios, filtro), div);
+}
+
+async function listarTodos() {
+  const url = "http://localhost/backend/index.php?modulo=usuario";
+  const response = await fetch(url);
+  const usuarios = await response.json();
+  const div = document.querySelector("#saidaBusca");
+  resetarDiv(div);
+  criarTabela(usuarios, div);
+}
+
+btnConsultarUsuarios.addEventListener("click", consultarUsuarios);
+btnListarTodosUsuarios.addEventListener("click", listarTodos);
