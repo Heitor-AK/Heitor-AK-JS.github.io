@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca CEFET-RJ</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Biblioteca do CEFET-RJ Nova Friburgo</h1>
+    <h1>Usuários da Biblioteca</h1>
+
+    <section class="acoes">
+      <h2>Consulta de Usuários</h2>
+      <input type="text" id="buscaUsuario" placeholder="Buscar por nome ou email">
+      <button id="consultarUsuarios">Consultar</button>
+      <button id="listarUsuarios">Listar Todos</button>
+    </section>
+
+    <section id="areaBusca">
+      <h3>Resultado</h3>
+      <div id="saidaUsuarios"></div>
+    </section>
+
+    <section class="acoes">
+      <h2>Cadastrar Novo Usuário</h2>
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="senha" placeholder="Senha">
+      <button id="cadastrarUsuario">Cadastrar</button>
+    </section>
+  </div>
+  <br>
+  <button onclick="window.location.href='../Livros/index.html'"">Ir para o setor de livros</button>  
+  <p>by H Inc.</p>
+</body>
+</html>
